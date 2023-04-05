@@ -1,4 +1,12 @@
 <?php
+
+    function empservices_theme_support() {
+        // Adds dynamic title tag support
+        add_theme_support('title-tag');
+    }
+
+    add_action('after_setup_theme', 'empservices_theme_support');
+
     function empservices_register_styles() {
         $version = wp_get_theme()->get('Version');
         wp_enqueue_style('empservices-style', get_template_directory_uri(). "/style.css", array('empservices-bootstrap'), $version, 'all');
