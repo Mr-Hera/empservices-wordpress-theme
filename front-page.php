@@ -29,6 +29,7 @@
 
 
     <main id="main">
+        <!-- renders home page from content set in wordpress -->
         <?php
             if(have_posts()) {
                 the_post();
@@ -63,7 +64,7 @@
                 </div>
 
                 <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-                    <img src="assets/img/office-staff.png" class="img-fluid" alt="">
+                    <img src="<?php echo get_theme_file_uri('/assets/images/office-staff.png') ?>" class="img-fluid" alt="">
                 </div>
 
                 </div>
@@ -86,7 +87,7 @@
 
                 <div class="col-lg-4">
                     <div class="box" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/img/learning.png" class="img-fluid" alt="">
+                    <img src="<?php echo get_theme_file_uri('/assets/images/learning.png') ?>" class="img-fluid" alt="">
                     <h3> Continous Learning</h3>
                     <p> Technology is a continuously growing and evolving and every day different aspects become more
                         relevant. And with it, consumer behaviour changes... </p>
@@ -95,7 +96,7 @@
 
                 <div class="col-lg-4 mt-4 mt-lg-0">
                     <div class="box" data-aos="fade-up" data-aos-delay="400">
-                    <img src="assets/img/collaboration.png" class="img-fluid" alt="">
+                    <img src="<?php echo get_theme_file_uri('/assets/images/collaboration.png') ?>" class="img-fluid" alt="">
                     <h3>Collaborative efforts</h3>
                     <p> The power of modern software is brought about by the spirit of collaboration. Collaboration itself
                         relies on systems and electronic devices which allows users to exchange ideas in structured fashion</p>
@@ -104,7 +105,7 @@
 
                 <div class="col-lg-4 mt-4 mt-lg-0">
                     <div class="box" data-aos="fade-up" data-aos-delay="600">
-                    <img src="assets/img/passion.png" class="img-fluid" alt="">
+                    <img src="<?php echo get_theme_file_uri('/assets/images/passion.png') ?>" class="img-fluid" alt="">
                     <h3>Passion for innovation</h3>
                     <p>The complexity of software technology can only be served well when there is deep enthusiasm for
                         innovation and the drive for ever improved concepts around work environment.</p>

@@ -11,8 +11,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="<?php echo get_theme_file_uri('/assets/images/favicon.png') ?>" rel="icon">
+  <link href="<?php echo get_theme_file_uri('/assets/images/apple-touch-icon.png') ?>" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
@@ -38,19 +38,36 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/emp-logo2.png" alt="">
+        <?php
+            if(function_exists('the_custom_logo')) {
+                $custom_logo_id = get_theme_mod('custom_logo');
+                $logo = wp_get_attachment_image_src($custom_logo_id);
+            }
+        ?>
+        <img src="<?php echo $logo[0] ?>" alt="">
         <span></span>
       </a>
 
+
       <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="./">Home</a></li>
+        <?php
+            wp_nav_menu(
+                array(
+                    'menu' => 'primary',
+                    'container' => '',
+                    'theme_location' => 'primary',
+                    'items_wrap' => '<ul>%3$s</ul>'
+                )
+            );
+        ?>
+        <!-- <ul> -->
+          <!-- <li><a class="nav-link scrollto active" href="./">Home</a></li> -->
           <!-- <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
-          <li><a href="corpdesk/">COPRPDESK</a></li>
-          <li><a href="cloud-brix/">CLOUD-BRIX</a></li>
+          <!-- <li><a href="corpdesk/">COPRPDESK</a></li> -->
+          <!-- <li><a href="cloud-brix/">CLOUD-BRIX</a></li> -->
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -68,9 +85,9 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> -->
-          <li><a class="nav-link scrollto" href="contact/">Contact</a></li>
+          <!-- <li><a class="nav-link scrollto" href="contact/">Contact</a></li> -->
           <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
-        </ul>
+        <!-- </ul> -->
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->      

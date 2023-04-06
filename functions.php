@@ -3,9 +3,22 @@
     function empservices_theme_support() {
         // Adds dynamic title tag support
         add_theme_support('title-tag');
+        add_theme_support('custom-logo');
+        add_theme_support('post-thumbnail');
     }
 
     add_action('after_setup_theme', 'empservices_theme_support');
+
+    function empservices_menus() {
+        $locations = array(
+            'primary' => "Desktop Primary Navbar",
+            'footer' => "Primary Footer",
+        );
+
+        register_nav_menus($locations);
+    }
+
+    add_action('init', 'empservices_menus');
 
     function empservices_register_styles() {
         $version = wp_get_theme()->get('Version');
