@@ -446,7 +446,7 @@ section {
 .hero {
   width: 100%;
   height: 100vh;
-  background: url(../img/hero-bg.png) top center no-repeat;
+  background: url(https://empservices.co.ke/wp-content/uploads/2023/04/hero-bg.png) top center no-repeat;
   background-size: cover;
 }
 
@@ -1421,7 +1421,7 @@ section {
   bottom: 0;
   height: 100%;
   width: 100%;
-  background: url(../img/team-shape.svg) no-repeat center bottom;
+  background: url(https://empservices.co.ke/wp-content/uploads/2023/04/team-shape.svg) no-repeat center bottom;
   background-size: contain;
   z-index: 1;
 }
@@ -2275,7 +2275,7 @@ section {
 }
 
 .footer .footer-top {
-  background: white url(../img/footer-bg.png) no-repeat right top;
+  background: white url(https://empservices.co.ke/wp-content/uploads/2023/04/footer-bg.png) no-repeat right top;
   background-size: contain;
   border-top: 1px solid #e1ecff;
   border-bottom: 1px solid #e1ecff;
